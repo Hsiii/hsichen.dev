@@ -1,0 +1,15 @@
+:root {
+    accent-color: var(--clr-accent);
+
+    --clr-bg: #f7f4ee;
+    --clr-surface: #fffdf9;
+    --clr-surface-hover: #fdf8f1;
+    --clr-text: #1f1d1a;
+    --clr-text-muted: #66605a;
+    --clr-accent: #9f4b2e;
+    --clr-image-outline: rgba(0, 0, 0, 0.1);
+    --shadow-card:
+        0 0 0 1px rgba(31, 29, 26, 0.08), 0 8px 24px rgba(31, 29, 26, 0.04);
+    --shadow-card-hover:
+        0 0 0 1px rgba(159, 75, 46, 0.28), 0 12px 32px rgba(31, 29, 26, 0.08);
+}
