@@ -76,7 +76,7 @@ const structuredData = {
             'name': 'Hsi Chen',
             'alternateName': 'Hsiii',
             'description': 'Design-focused software developer.',
-            'image': 'https://hsichen.dev/profile/hsi.png',
+            'image': 'https://hsichen.dev/profile/hsi.webp',
             'url': 'https://hsichen.dev',
             'sameAs': [
                 'https://github.com/Hsiii',
@@ -130,12 +130,12 @@ export default function HomePage() {
                                 height={784}
                                 priority
                                 sizes='(max-width: 767px) 32vw, (max-width: 1199px) 20vw, 22vw'
-                                src='/profile/hsi.png'
+                                src='/profile/hsi.webp'
                                 width={784}
                             />
 
                             <a
-                                aria-label='Find me elsewhere'
+                                aria-label='FIND*ME*ELSEWHERE* — Find me elsewhere'
                                 className='links-cta'
                                 href='https://links.hsichen.dev'
                             >
