@@ -41,8 +41,9 @@
     );
     --size-icon: 40px;
     --size-project-row: 48px;
-    --size-projects-preview: 680px;
+    --size-projects-preview: 760px;
     --size-projects-header: 80px;
+    --size-page-block-gutter: var(--space-24);
     --size-hero-copy-max: 360px;
     --size-photo: clamp(200px, 22vw, 320px);
     --size-links-cta: calc(var(--size-photo) / 2);
