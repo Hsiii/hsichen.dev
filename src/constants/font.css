@@ -4,17 +4,22 @@
 
     --fs-body: 1rem;
     --fs-body-sm: 0.875rem;
-    --fs-heading: 2rem;
-    --fs-hero: clamp(4.5rem, 9vw, 8rem);
+    --fs-circular: clamp(0.625rem, 0.8vw, 0.75rem);
+    --fs-subheading: 2rem;
+    --fs-heading: 3rem;
+    --fs-name: clamp(10rem, 25svh, 18rem);
 
     --fw-medium: 500;
     --fw-bold: 700;
 
     --font-body-md: var(--fw-medium) var(--fs-body) / 1.6 var(--ff-body);
     --font-body-sm: var(--fw-medium) var(--fs-body-sm) / 1.5 var(--ff-body);
+    --font-subheading: var(--fw-bold) var(--fs-subheading) / 1.2
+        var(--ff-display);
     --font-heading: var(--fw-bold) var(--fs-heading) / 1.1 var(--ff-display);
-    --font-hero: var(--fw-bold) var(--fs-hero) / 0.9 var(--ff-display);
+    --font-name: var(--fw-bold) var(--fs-name) / 1 var(--ff-display);
 
+    --space-4: 4px;
     --space-8: 8px;
     --space-12: 12px;
     --space-16: 16px;
@@ -27,15 +32,39 @@
 
     --size-border-1: 1px;
     --size-outline: 2px;
-    --size-page-max: 1200px;
-    --size-projects-min: 400px;
-    --size-list-max: 480px;
+    --size-projects-min: 520px;
+    --size-list-max: 680px;
+    --size-projects-width: clamp(
+        var(--size-projects-min),
+        52vw,
+        var(--size-list-max)
+    );
     --size-icon: 40px;
-    --size-card-height: 112px;
-    --measure-copy: 36ch;
-
-    --radius-8: 8px;
-    --radius-12: 12px;
-
+    --size-project-row: 48px;
+    --size-projects-preview: 680px;
+    --size-projects-header: 80px;
+    --size-hero-copy-max: 360px;
+    --size-photo: clamp(200px, 22vw, 320px);
+    --size-links-cta: calc(var(--size-photo) / 2);
+    --size-profile-inset: clamp(176px, calc(25svh - 8px), 288px);
+    --size-projects-gutter: clamp(
+        var(--space-48),
+        calc(
+            (
+                    100% - var(--size-profile-inset) - var(--size-photo) -
+                        var(--size-projects-width)
+                ) /
+                2
+        ),
+        calc(
+            100% - var(--size-projects-width) - var(--size-profile-inset) -
+                var(--size-photo) - var(--space-64)
+        )
+    );
+    --size-scroll-fade: 16px;
     --duration-fast: 160ms;
+    --bleed-name: 0.01em;
+    --tracking-name: -0.08em;
+    --scale-name-x: 1.8;
+    --scale-name-y: 1.1;
 }
