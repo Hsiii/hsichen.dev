@@ -67,9 +67,49 @@ const projects = [
     },
 ];
 
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@id': 'https://hsichen.dev/#person',
+            '@type': 'Person',
+            'name': 'Hsi Chen',
+            'alternateName': 'Hsiii',
+            'description': 'Design-focused software developer.',
+            'image': 'https://hsichen.dev/profile/hsi.png',
+            'url': 'https://hsichen.dev',
+            'sameAs': [
+                'https://github.com/Hsiii',
+                'https://www.linkedin.com/in/its-hsi-chen/',
+                'https://www.threads.com/@ccc_hsi',
+            ],
+        },
+        {
+            '@id': 'https://hsichen.dev/#website',
+            '@type': 'WebSite',
+            'name': 'Hsi Chen',
+            'description':
+                'Projects by Hsi Chen, a design-focused software developer.',
+            'url': 'https://hsichen.dev',
+            'creator': {
+                '@id': 'https://hsichen.dev/#person',
+            },
+        },
+    ],
+} as const;
+
+const structuredDataJson = JSON.stringify(structuredData).replaceAll(
+    '<',
+    String.raw`\u003c`
+);
+
 export default function HomePage() {
     return (
         <main>
+            <script
+                dangerouslySetInnerHTML={{ __html: structuredDataJson }}
+                type='application/ld+json'
+            />
             <div className='content'>
                 <section aria-labelledby='profile-heading' className='hero'>
                     <div className='hero__wordmark'>
