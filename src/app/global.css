@@ -211,7 +211,9 @@ main {
     position: relative;
     display: grid;
     align-self: center;
+    justify-self: center;
     grid-template-rows: auto minmax(0, 1fr);
+    width: min(100%, var(--size-projects-min));
     height: min(
         100%,
         calc(var(--size-projects-header) + var(--size-projects-preview))
