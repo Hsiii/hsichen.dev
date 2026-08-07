@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import CircularText from './CircularText';
+
 const projects = [
     {
         description: 'Check train status with zero taps.',
@@ -63,46 +65,96 @@ const projects = [
         name: 'AkuMa',
         url: 'https://akuma.sessatakuma.dev',
     },
-] as const;
+];
 
 export default function HomePage() {
     return (
         <main>
             <div className='content'>
-                <section className='hero'>
-                    <h1>Hsi Chen</h1>
-                    <p>
-                        I plan to build a portfolio here. For now, I&apos;m
-                        keeping it simple.
-                    </p>
+                <section aria-labelledby='profile-heading' className='hero'>
+                    <div className='hero__wordmark'>
+                        <h1
+                            aria-label='Hsi Chen'
+                            className='hero__name'
+                            id='profile-heading'
+                        >
+                            Hsi Chen
+                        </h1>
+                    </div>
+
+                    <div className='hero__profile'>
+                        <div className='hero__portrait'>
+                            <Image
+                                alt='Hsi Chen taking a mirror selfie'
+                                className='hero__photo'
+                                height={784}
+                                priority
+                                sizes='(max-width: 767px) 32vw, (max-width: 1199px) 20vw, 22vw'
+                                src='/profile/hsi.png'
+                                width={784}
+                            />
+
+                            <a
+                                aria-label='Find me elsewhere'
+                                className='links-cta'
+                                href='https://links.hsichen.dev'
+                            >
+                                <CircularText text='FIND*ME*ELSEWHERE*' />
+                                <svg
+                                    aria-hidden
+                                    className='links-cta__icon'
+                                    fill='none'
+                                    height='24'
+                                    stroke='currentColor'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth='2'
+                                    viewBox='0 0 24 24'
+                                    width='24'
+                                >
+                                    <path d='M5 12h14' />
+                                    <path d='m12 5 7 7-7 7' />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </section>
 
                 <section
                     aria-labelledby='projects-heading'
                     className='projects'
                 >
-                    <h2 id='projects-heading'>My projects</h2>
-                    <ul>
-                        {projects.map((project) => (
-                            <li key={project.url}>
-                                <a className='project' href={project.url}>
-                                    <Image
-                                        alt=''
-                                        className='project__icon'
-                                        height={40}
-                                        src={project.icon}
-                                        width={40}
-                                    />
-                                    <span className='project__copy'>
-                                        <strong>{project.name}</strong>
-                                        <span className='project__description'>
-                                            {project.description}
+                    <header className='projects__header'>
+                        <h2 id='projects-heading'>My projects</h2>
+                    </header>
+
+                    <div className='projects__viewport'>
+                        <ul className='projects__list'>
+                            {projects.map((project) => (
+                                <li key={project.url}>
+                                    <a className='project' href={project.url}>
+                                        <Image
+                                            alt=''
+                                            className={`project__icon${
+                                                project.name === 'HandyTab'
+                                                    ? ' project__icon--monochrome'
+                                                    : ''
+                                            }`}
+                                            height={40}
+                                            src={project.icon}
+                                            width={40}
+                                        />
+                                        <span className='project__copy'>
+                                            <strong>{project.name}</strong>
+                                            <span className='project__description'>
+                                                {project.description}
+                                            </span>
                                         </span>
-                                    </span>
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </section>
             </div>
         </main>
