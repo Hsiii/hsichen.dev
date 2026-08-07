@@ -12,10 +12,10 @@ export const dynamic = 'force-static';
 
 export default async function OpenGraphImage(): Promise<ImageResponse> {
     const portrait = await readFile(
-        join(process.cwd(), 'public/profile/hsi.png'),
+        join(process.cwd(), 'public/profile/hsi-og.jpg'),
         'base64'
     );
-    const portraitSrc = `data:image/png;base64,${portrait}`;
+    const portraitSrc = `data:image/jpeg;base64,${portrait}`;
 
     return new ImageResponse(
         <div
