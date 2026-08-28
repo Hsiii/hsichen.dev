@@ -1,0 +1,21 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "redirects": [
+        {
+            "source": "/:path*",
+            "has": [{ "type": "host", "value": "www.hsichen.dev" }],
+            "destination": "https://hsichen.dev/:path*",
+            "permanent": true
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/links",
+            "destination": "https://links-hsichen.vercel.app/links"
+        },
+        {
+            "source": "/links/:path*",
+            "destination": "https://links-hsichen.vercel.app/links/:path*"
+        }
+    ]
+}
