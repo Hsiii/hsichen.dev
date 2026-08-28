@@ -6,16 +6,22 @@
             "has": [{ "type": "host", "value": "www.hsichen.dev" }],
             "destination": "https://hsichen.dev/:path*",
             "permanent": true
+        },
+        {
+            "source": "/:path*",
+            "has": [{ "type": "host", "value": "links.hsichen.dev" }],
+            "destination": "https://hsichen.dev/links",
+            "permanent": true
         }
     ],
     "rewrites": [
         {
             "source": "/links",
-            "destination": "https://links-hsichen.vercel.app/links"
+            "destination": "https://links-origin.hsichen.dev/links"
         },
         {
             "source": "/links/:path*",
-            "destination": "https://links-hsichen.vercel.app/links/:path*"
+            "destination": "https://links-origin.hsichen.dev/links/:path*"
         }
     ]
 }
