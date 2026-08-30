@@ -41,7 +41,7 @@ main {
 .content {
     display: grid;
     grid-template-columns: minmax(0, 1fr) var(--size-projects-width);
-    gap: var(--space-64);
+    gap: clamp(0px, calc(100vw - 970px), var(--space-64));
     width: 100%;
     height: 100svh;
     min-height: 0;
@@ -91,11 +91,7 @@ main {
     top: 20%;
     right: var(--space-64);
     z-index: 1;
-    width: min(
-        72%,
-        var(--size-hero-copy-max),
-        calc(100% - var(--size-profile-inset))
-    );
+    width: var(--size-photo);
 }
 
 .hero__portrait {
@@ -301,38 +297,10 @@ h2 {
     text-wrap: pretty;
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
-    :root {
-        --size-projects-min: 400px;
-        --size-list-max: 520px;
-        --size-photo: clamp(224px, 20vw, 240px);
-        --size-profile-inset: clamp(112px, 16vmin, 160px);
-    }
-
-    .content {
-        gap: var(--space-32);
-        padding: var(--size-page-block-gutter) var(--space-24)
-            var(--size-page-block-gutter) 0;
-    }
-
-    .hero {
-        margin-block: calc(var(--size-page-block-gutter) * -1);
-    }
-
-    .hero__profile {
-        right: 0;
-        width: min(72%, 280px, calc(100% - var(--size-profile-inset)));
-    }
-
-    .hero__portrait {
-        --offset-photo-x: calc(var(--space-32) * -1);
-    }
-}
-
-@media (max-width: 767px) {
+@media (max-width: 959px) {
     :root {
         --size-mobile-padding: clamp(var(--space-20), 6vw, var(--space-32));
-        --size-photo: clamp(120px, 32vw, 160px);
+        --size-photo: 160px;
     }
 
     .content {

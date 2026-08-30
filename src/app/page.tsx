@@ -129,7 +129,7 @@ export default function HomePage() {
                                 className='hero__photo'
                                 height={784}
                                 priority
-                                sizes='(max-width: 767px) 32vw, (max-width: 1199px) 20vw, 22vw'
+                                sizes='(max-width: 959px) 160px, 320px'
                                 src='/profile/hsi.webp'
                                 width={784}
                             />
