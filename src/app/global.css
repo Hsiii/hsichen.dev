@@ -1,6 +1,13 @@
 @import '../constants/color.css';
 @import '../constants/font.css';
 
+/* The destination document must opt in too. */
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;

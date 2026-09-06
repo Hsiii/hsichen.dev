@@ -103,9 +103,22 @@ const structuredDataJson = JSON.stringify(structuredData).replaceAll(
     String.raw`\u003c`
 );
 
+const speculationRules = JSON.stringify({
+    prerender: [
+        {
+            where: { selector_matches: '.links-cta' },
+            eagerness: 'moderate',
+        },
+    ],
+});
+
 export default function HomePage() {
     return (
         <main>
+            <script
+                dangerouslySetInnerHTML={{ __html: speculationRules }}
+                type='speculationrules'
+            />
             <script
                 dangerouslySetInnerHTML={{ __html: structuredDataJson }}
                 type='application/ld+json'
@@ -137,7 +150,7 @@ export default function HomePage() {
                             <a
                                 aria-label='FIND*ME*ELSEWHERE* — Find me elsewhere'
                                 className='links-cta'
-                                href='https://links.hsichen.dev'
+                                href='https://hsichen.dev/links'
                             >
                                 <CircularText text='FIND*ME*ELSEWHERE*' />
                                 <svg
